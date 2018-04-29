@@ -81,7 +81,7 @@ set shiftwidth=4
 " Copy indent from current line when starting a new line.
 set autoindent
 
-" Stop spaces from being turned into tabs.
+" Use space characters instead of tabs.
 set expandtab
 
 " Incremental search an you type.
