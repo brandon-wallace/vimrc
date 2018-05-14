@@ -187,6 +187,7 @@ inoremap <leader>" ""<esc>i
 inoremap <leader>( ()<esc>i
 inoremap <leader>[ []<esc>i
 inoremap <leader>{ {}<esc>i
+inoremap <leader>< <><esc>i
 
 
 " Center the cursor when moving to the next word.
@@ -286,7 +287,7 @@ endif
 if has("gui_running")
 
     " Set the color scheme to molokai.
-    colorscheme molokai
+    colorscheme one-dark
 
     " Set font to DejaVu Sans Mono 10
     "set guifont=DejaVu\ Sans\ Mono\ 10
@@ -330,12 +331,16 @@ if has("gui_running")
     " Make the window have this number of columns.
     set columns=188
 
+    " Set the background light or dark.
+    "set background=light
+    set background=dark
+
 endif
 
 " }}}
 
 
-" STATUS LINE ------------------------------------------------------------ {{{
+"STATUS LINE ------------------------------------------------------------ {{{
 
 
     " Set colors for the status line.
