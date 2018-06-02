@@ -197,7 +197,9 @@ nnoremap n nzz
 nnoremap N Nzz
 
 " Map <F3> to nerdtree toggle.
-nnoremap <F3> :NERDTreeToggle ~/bin<cr>
+"nnoremap <F3> :NERDTreeToggle ~/bin<cr>
+" Test out netrw for a while.
+nnoremap <F3> :Vexplore .<cr>
 
 " Have nerdtree ignore certain files.
 let NERDTreeIgnore=['\.jpg$', '\.mp4$', '\.zip$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.svg$', '\.gif$', '\.tar$', '\.gz$', '\.xz$', '\.bz2$', '\.db$']
@@ -247,6 +249,13 @@ noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
+
+" Setting for netrw.
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
 
 
 " }}}
