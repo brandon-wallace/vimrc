@@ -179,6 +179,8 @@ nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
 
 " Print file from a Linux machine.
+" View available printers:   lpstat -v
+" Set default printer:       lpoptions -d <printer_name>
 nnoremap <silent> <leader>p :%w !lp<cr>
 
 " Easy brackets.
@@ -198,7 +200,7 @@ nnoremap N Nzz
 nnoremap <F3> :NERDTreeToggle ~/bin<cr>
 
 " Have nerdtree ignore certain files.
-let NERDTreeIgnore=['\.jpg$', '\.mp4$', '\.zip$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$']
+let NERDTreeIgnore=['\.jpg$', '\.mp4$', '\.zip$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.svg$', '\.gif$', '\.tar$', '\.gz$', '\.xz$', '\.bz2$', '\.db$']
 
 " Yank from cursor to the end of line.
 nnoremap Y y$
@@ -291,7 +293,7 @@ if has("gui_running")
 
     " Set font to DejaVu Sans Mono 10
     "set guifont=DejaVu\ Sans\ Mono\ 10
-    set guifont=Hack\ Regular\ 10
+    set guifont=Hack\ Regular\ 12
     
     " Add a column marker.
     set colorcolumn=-1
