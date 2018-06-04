@@ -264,10 +264,10 @@ let g:netrw_winsize = 20
 " VIMSCRIPT FILE SETTINGS ------------------------------------------------ {{{
 
 " Open nerdtree automatically if no files are specified.
-augroup nerdtree_open
-    autocmd!
-    autocmd VimEnter * if !argc() | NERDTree ~/bin | endif
-augroup END
+"augroup nerdtree_open
+"    autocmd!
+"    autocmd VimEnter * if !argc() | NERDTree ~/bin | endif
+"augroup END
 
 " Turn on cursorline and cursorcolumn only in active window.
 augroup cursor_off
@@ -287,6 +287,9 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+" Set indentation of HTML to 2 spaces.
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2 expandtab
 
 " If vim version is equal to or greater than 7.3 enable undofile.
 if version >= 703
