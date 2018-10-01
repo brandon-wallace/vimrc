@@ -136,10 +136,8 @@ set wildmenu
 set wildmode=list:longest
 
 " Ignore files with these extentions.
-set wildignore=*.odt,*.doc*,*.jpg,*.png,*.gif,
-            \*.pdf,*.pyc,*.JPG,*.exe,*.bmp,*.flv
-            \*.gz,*.tgz,*.zip,*.iso,*.gzip,*.mov
-            \*.xz,*.tar,*.img,*.docx,*.xlsx,*.xls
+set wildignore=*.odt,*.doc*,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.JPG,*.exe,*.bmp,*.flv
+            \*.gz,*.tgz,*.zip,*.iso,*.gzip,*.mov,*.xz,*.tar,*.img,*.docx,*.xlsx,*.xls
 
 " Temporary files.
 set directory=/tmp
@@ -301,6 +299,7 @@ endif
 if has("gui_running")
 
     " Set the color scheme to molokai.
+    "colorscheme gruvbox
     colorscheme one-dark
 
     " Set font to DejaVu Sans Mono 10
