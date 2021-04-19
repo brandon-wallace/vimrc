@@ -1,7 +1,7 @@
 # My .vimrc and _vimrc.
 
 
-![vimrc_screenshot](/vimrc_screenshot.jpg)
+![vimrc_screenshot](/screenshot1.png)
 
 suggested packages/plugins
 
