@@ -18,9 +18,6 @@ set nocompatible
 " Allow plugins to be used.
 filetype plugin indent on
 
-" Manage the 'runtimepath', install plugins easy.
-call pathogen#infect()
-
 " Use syntax highlighting.
 syntax on
 
@@ -141,6 +138,34 @@ set backupdir=~/.vim/backup
 
 " Enable Python syntax highlighting features.
 let python_highlight_all = 1
+
+"PLUGINS ----------------------------------------------------------------- {{{
+
+" Specify a directory for plugins.
+" Avoid using standard Vim directory names like 'plugin'.
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes!!
+
+Plug 'preservim/nerdtree'
+
+Plug 'davidhalter/jedi-vim'
+
+Plug 'https://github.com/vim-syntastic/syntastic.git'
+
+Plug 'https://github.com/airblade/vim-gitgutter.git'
+
+Plug 'preservim/nerdcommenter', { 'on': 'NERDTreeToggle' }
+
+Plug 'tpope/vim-surround'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Initialize plugin system.
+call plug#end()
+
+" }}}
 
 
 " MAPPINGS --------------------------------------------------------------- {{{
