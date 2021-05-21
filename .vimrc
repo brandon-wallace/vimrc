@@ -127,8 +127,7 @@ set wildmenu
 set wildmode=list:longest
 
 " Ignore files with these extentions.
-set wildignore=*.odt,*.doc*,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.JPG,*.exe,*.bmp,*.flv
-            \*.gz,*.tgz,*.zip,*.iso,*.gzip,*.mov,*.xz,*.tar,*.img,*.docx,*.xlsx,*.xls
+set wildignore=*.odt,*.doc*,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.JPG,*.exe,*.bmp,*.flv,*.gz,*.tgz,*.zip,*.iso,*.gzip,*.mov,*.xz,*.tar,*.img,*.docx,*.xlsx,*.xls
 
 " Temporary files.
 set directory=/tmp
@@ -215,8 +214,6 @@ nnoremap N Nzz
 
 " Map <F3> to nerdtree toggle.
 nnoremap <F3> :NERDTreeToggle ~/bin<cr>
-" Test out netrw for a while.
-"nnoremap <F3> :Vexplore .<cr>
 
 " Have nerdtree ignore certain files.
 let NERDTreeIgnore=['\.jpg$', '\.mp4$', '\.zip$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.svg$', '\.gif$', '\.tar$', '\.gz$', '\.xz$', '\.bz2$', '\.db$']
@@ -345,7 +342,6 @@ if has("gui_running")
     colorscheme one-dark
 
     " Set font to DejaVu Sans Mono 10
-    "set guifont=DejaVu\ Sans\ Mono\ 10
     set guifont=Hack\ Regular\ 12
     
     " Add a column marker.
@@ -376,15 +372,6 @@ if has("gui_running")
 
     " Hide the scroll bar.
     set guioptions-=r
-
-    " Window position.
-    winpos 50 50
-
-    " Make the window be this number of lines long.
-    set lines=47
-
-    " Make the window have this number of columns.
-    set columns=188
 
     " Set the background light or dark.
     "set background=light
