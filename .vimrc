@@ -1,3 +1,4 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 "                
 "                  ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
@@ -21,6 +22,12 @@ filetype plugin indent on
 " Use syntax highlighting.
 syntax on
 
+" Always leave 10 rows below cursor.
+set scrolloff=10
+
+" Display a column with relative number column.
+set relativenumber
+
 " Add numbers to the lines.
 set number
 
@@ -34,10 +41,10 @@ set cursorcolumn
 set title
 
 " Backup files.
-set nobackup
+set backup
 
 " Backup directory.
-"set backupdir=~/.vim/backup/
+set backupdir=~/.vim/backup/
 
 " Hide mouse when typing.
 set mousehide
@@ -113,12 +120,6 @@ set fileencoding=utf-8
 
 " Set the character encoding.
 set encoding=utf-8
-
-" Create the error color.
-"highlight TooLong ctermfg=red
-
-" Match the characters that are longer than the 74th column. 
-"match TooLong /\%>74v.\+/
 
 " Show auto complete menus.
 set wildmenu
@@ -231,7 +232,7 @@ nnoremap <leader>v :e $MYVIMRC<cr>
 nnoremap <leader>s :w<CR>:source $MYVIMRC<cr>
 
 " See the fonts available on the system.
-" syntax - :set guifont=Arial\ Bold\ 10.
+" syntax - :set guifont=Hack\ Bold\ 12.
 nnoremap <leader>f :set guifont=*<cr>
 
 " Press -S to check spelling in current buffer.
@@ -249,9 +250,6 @@ nnoremap <f7> :make
 " Paste a block of code without formatting it.
 nnoremap <mousemiddle> <esc>"*P
 
-" Disable visual mode.
-nnoremap Q <nop>
-
 " Easy navigate the split view.
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -265,11 +263,11 @@ noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
 " Setting for netrw.
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 20
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 20
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -299,12 +297,6 @@ let g:NERDToggleCheckAllLines = 1
 
 
 " VIMSCRIPT FILE SETTINGS ------------------------------------------------ {{{
-
-" Open nerdtree automatically if no files are specified.
-"augroup nerdtree_open
-"    autocmd!
-"    autocmd VimEnter * if !argc() | NERDTree ~/bin | endif
-"augroup END
 
 " Turn on cursorline and cursorcolumn only in active window.
 augroup cursor_off
@@ -337,21 +329,12 @@ endif
 
 if has("gui_running")
 
-    " Set the color scheme to molokai.
+    " Set the color scheme.
     "colorscheme gruvbox
     colorscheme one-dark
 
     " Set font to DejaVu Sans Mono 10
     set guifont=Hack\ Regular\ 12
-    
-    " Add a column marker.
-    set colorcolumn=-1
-
-    " Create a block of color from column 80 to 356.
-    let &colorcolumn=join(range(81,256), ',')
-
-    " Set the colorcolumn color.
-    highlight ColorColumn guibg=Black
 
     " Map the Alt-F3 key to toggle the menu, tool, and scroll bar.
     noremap <M-F3> :if &guioptions =~# 'T' <Bar>
@@ -373,7 +356,7 @@ if has("gui_running")
     " Hide the scroll bar.
     set guioptions-=r
 
-    " Set the background light or dark.
+    " Set the background tone.
     "set background=light
     set background=dark
 
@@ -488,6 +471,3 @@ endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"##############################################################################
-"==============================================================================
-"------------------------------------------------------------------------------
