@@ -162,8 +162,22 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
+
 " Initialize plugin system.
 call plug#end()
+
+"let g:instant_markdown_slow = 1
+"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_mermaid = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1
 
 " }}}
 
