@@ -167,17 +167,51 @@ Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 " Initialize plugin system.
 call plug#end()
 
+" Instant-Markdown settings.
 "let g:instant_markdown_slow = 1
 "let g:instant_markdown_autostart = 0
 "let g:instant_markdown_open_to_the_world = 1
 "let g:instant_markdown_allow_unsafe_content = 1
-"let g:instant_markdown_allow_external_content = 0
+let g:instant_markdown_allow_external_content = 1
 "let g:instant_markdown_mathjax = 1
 "let g:instant_markdown_mermaid = 1
 "let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
 "let g:instant_markdown_autoscroll = 0
 "let g:instant_markdown_port = 8888
 "let g:instant_markdown_python = 1
+
+" Recommended Syntastics settings.
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+    
+" Check syntax for python3 rather than python2.
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
 
 " }}}
 
@@ -283,34 +317,16 @@ noremap <c-right> <c-w><
 "let g:netrw_altv = 1
 "let g:netrw_winsize = 20
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
-
 " }}}
 
 
 " VIMSCRIPT FILE SETTINGS ------------------------------------------------ {{{
+
+" Use the marker method of folding.
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
 
 " Turn on cursorline and cursorcolumn only in active window.
 augroup cursor_off
@@ -325,12 +341,6 @@ augroup filetype_html
     autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
 augroup END
 
-" Use the marker method of folding.
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
-
 " Set indentation of HTML to 2 spaces.
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 expandtab
 
@@ -343,36 +353,41 @@ endif
 
 if has("gui_running")
 
+    " Set the background tone.
+    set background=dark
+    
     " Set the color scheme.
-    "colorscheme gruvbox
     colorscheme one-dark
 
     " Set font to DejaVu Sans Mono 10
     set guifont=Hack\ Regular\ 12
 
-    " Map the Alt-F3 key to toggle the menu, tool, and scroll bar.
-    noremap <M-F3> :if &guioptions =~# 'T' <Bar>
-                    \set guioptions-=T <Bar>
-                    \set guioptions-=m <Bar>
-                    \set guioptions-=r
-                \else <Bar>
-                    \set guioptions+=T <Bar>
-                    \set guioptions+=m <Bar>
-                    \set guioptions+=r
-                \endif<CR>
-
-    " Hide tab bar.
-    set guioptions-=T
-
-    " Hide menu bar.
-    set guioptions-=m
-
-    " Hide the scroll bar.
-    set guioptions-=r
-
-    " Set the background tone.
-    "set background=light
-    set background=dark
+    " Display more of the file by default.
+    if has('gui_running')
+    
+        " Hide the toolbar.
+        set guioptions-=T
+        
+        " Hide the the left-side scroll bar.
+        set guioptions-=L
+        
+        " Hide the the left-side scroll bar.
+        set guioptions-=r
+        
+        " Hide the the menu bar.
+        set guioptions-=m
+        
+        " Hide the the bottom scroll bar.
+        set guioptions-=b
+        
+    endif
+    
+    " Map the F4 key to toggle the menu, tool, and scroll bar.
+    nnoremap <F4> :if &guioptions=~#'mTr'<Bar>
+        \set guioptions-=mTr<Bar>
+        \else<Bar>
+        \set guioptions+=mTr<Bar>
+        \endif<CR>
 
 endif
 
@@ -435,15 +450,6 @@ endif
     set statusline+=%{SyntasticStatuslineFlag()}
      
     set statusline+=%*
-
-    " Recommended syntastics settings.
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    
-    " Check syntax for python3 rather than python2.
-    let g:syntastic_python_python_exec = '/usr/bin/python3'
 
     " Blue on white.
     set statusline+=%1*
