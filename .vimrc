@@ -224,9 +224,6 @@ let mapleader = "-"
 " Set localleader to \.
 let maplocalleader = "\\"
 
-" Disable the capslock key.
-noremap <capslock> <nop>
-
 " Turn off search highlighting.
 nnoremap <silent> <localleader>\ :nohlsearch<cr>
 
