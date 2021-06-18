@@ -361,26 +361,21 @@ if has("gui_running")
 
     " Set font to DejaVu Sans Mono 10
     set guifont=Hack\ Regular\ 12
-
-    " Display more of the file by default.
-    if has('gui_running')
     
-        " Hide the toolbar.
-        set guioptions-=T
+    " Hide the toolbar.
+    set guioptions-=T
         
-        " Hide the the left-side scroll bar.
-        set guioptions-=L
+    " Hide the the left-side scroll bar.
+    set guioptions-=L
         
-        " Hide the the left-side scroll bar.
-        set guioptions-=r
+    " Hide the the left-side scroll bar.
+    set guioptions-=r
         
-        " Hide the the menu bar.
-        set guioptions-=m
+    " Hide the the menu bar.
+    set guioptions-=m
         
-        " Hide the the bottom scroll bar.
-        set guioptions-=b
-        
-    endif
+    " Hide the the bottom scroll bar.
+    set guioptions-=b
     
     " Map the F4 key to toggle the menu, tool, and scroll bar.
     nnoremap <F4> :if &guioptions=~#'mTr'<Bar>
