@@ -224,6 +224,9 @@ let mapleader = "-"
 " Set localleader to \.
 let maplocalleader = "\\"
 
+" Enable syntax highlighting in markdown code blocks.
+let g:markdown_fenced_languages = ['html', 'python', 'css', 'vim', 'rust', 'c']
+
 " Turn off search highlighting.
 nnoremap <silent> <localleader>\ :nohlsearch<cr>
 
