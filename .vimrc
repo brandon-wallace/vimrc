@@ -227,6 +227,10 @@ let maplocalleader = "\\"
 " Enable syntax highlighting in markdown code blocks.
 let g:markdown_fenced_languages = ['html', 'python', 'css', 'vim', 'rust', 'c']
 
+" Toggle set paste.
+inoremap <F4> <esc>:set paste!<cr>i
+nnoremap <F4> :set paste!<cr>
+
 " Turn off search highlighting.
 nnoremap <silent> <localleader>\ :nohlsearch<cr>
 
