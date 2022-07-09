@@ -1,17 +1,23 @@
-# My .vimrc and _vimrc.
+# My .vimrc 
 
 
-![vimrc_screenshot](/screenshot1.png)
+![vimrc_screenshot1](/screenshot1.png)
 
-suggested packages/plugins
+## GVim 
+## Theme: Gruvbox
+## Font: FiraCode Nerd
 
-    - exuberant-ctags
-    - syntastic
-    - NERDTree
-    - jedi-vim
-    - pyflakes8
-    - pep8
-    - flake8
-    - isort
-    - yapf
-    - ack-grep
+```
+.vim/
+├── autoload/
+├── backup/
+├── colors/
+├── spell/
+└── templates/
+```
+
+![vimrc_screenshot2](/screenshot2.png)
+
+## Vim 
+## Theme: Molokai
+## Font: FiraCode Nerd
