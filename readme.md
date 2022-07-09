@@ -1,11 +1,11 @@
 # My .vimrc 
 
 
-![vimrc_screenshot1](/screenshot1.png)
+![vimrc_screenshot2](/screenshot2.png)
 
-## GVim 
-## Theme: Gruvbox
-## Font: FiraCode Nerd
+### Vim 
+### Theme: Molokai
+### Font: FiraCode Nerd
 
 ```
 .vim/
@@ -14,10 +14,11 @@
 ├── colors/
 ├── spell/
 └── templates/
+
 ```
+![vimrc_screenshot1](/screenshot1.png)
 
-![vimrc_screenshot2](/screenshot2.png)
+### GVim 
+### Theme: Gruvbox
+### Font: FiraCode Nerd
 
-## Vim 
-## Theme: Molokai
-## Font: FiraCode Nerd
