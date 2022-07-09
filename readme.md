@@ -7,6 +7,13 @@
 ### Theme: Molokai
 ### Font: FiraCode Nerd
 
+
+![vimrc_screenshot1](/screenshot1.png)
+
+### GVim 
+### Theme: Gruvbox
+### Font: FiraCode Nerd
+
 ```
 .vim/
 ├── autoload/
@@ -14,11 +21,6 @@
 ├── colors/
 ├── spell/
 └── templates/
-
+    ├── css.tpl
+    └── html.tpl
 ```
-![vimrc_screenshot1](/screenshot1.png)
-
-### GVim 
-### Theme: Gruvbox
-### Font: FiraCode Nerd
-
