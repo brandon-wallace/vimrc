@@ -1,3 +1,11 @@
+/* 
+    This file will set some nice default option when starting a new web page such as
+    * Keeps footer at the bottom of window but allows content to push it down
+    * Remove margin
+    * Remove padding
+    * Sets a line-height to space lines out better
+*/
+
 * {
     margin: 0;
     padding: 0;
