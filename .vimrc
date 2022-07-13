@@ -69,8 +69,23 @@ set history=8000
 " Back up files.
 set backup
 
-" Set a directory to save file backups.
-set undodir=~/.vim/backup
+" Set a directory to save file backups with full path.
+set backupdir=~/.vim/backup//
+
+" Undo changes to files after saving them.
+set undofile
+
+" Set a directory to save undo data with full path.
+set undodir=~/.vim/undo//
+
+" Set number of times a file can be undone.
+set undoreload=2000
+
+" Undo changes to files after saving them.
+set undofile
+
+" Set location for temporary (swp) files.
+set directory=/tmp
 
 " Check to see if an file has changed by another text editor.
 set autoread
@@ -83,15 +98,6 @@ set textwidth=80
 
 " Hide mouse when typing.
 set mousehide
-
-" Set location for temporary files.
-set directory=/tmp
-
-" Undo changes to files after saving them.
-set undofile
-
-" Set number of times a file can be undone.
-set undoreload=1000
 
 " Set colorscheme.
 colorscheme molokai
