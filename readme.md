@@ -19,7 +19,9 @@
 ├── autoload/
 ├── backup/
 ├── colors/
+├── undo/
 ├── spell/
+├── swp/
 └── templates/
     ├── css.tpl
     └── html.tpl
